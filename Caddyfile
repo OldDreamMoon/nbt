@@ -24,3 +24,12 @@ vocechat.olddream.tech {
                 flush_interval -1
         }
 }
+
+bing.olddream.tech {
+        reverse_proxy  http://127.0.0.1:8222 {
+                header_up Host {host}
+                header_up X-Real-IP {remote}
+                header_up X-Forwarded_for {remote}
+                flush_interval -1
+        }
+}
